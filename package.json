@@ -1,0 +1,50 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This is the backend API code that needs to be consumed by front-end applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Smi",
+  "license": "ISC",
+  "dependencies": {
+    "angular-md5": "^0.1.10",
+    "angular-sanitize": "^1.6.5",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
+    "ng-infinite-scroll": "^1.3.0",
+    "npm-cli": "^0.1.0",
+    "q": "^1.5.0"
+  },
+  "devDependencies": {
+    "angular": "^1.6.6",
+    "angular-md5": "^0.1.10",
+    "angular-sanitize": "^1.6.6",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongod": "^2.0.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9",
+    "morgan": "^1.8.2",
+    "q": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smi0001/vdoPortal.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "expressjs",
+    "crud"
+  ],
+  "bugs": {
+    "url": "https://github.com/Smi0001/vdoPortal/issues"
+  },
+  "homepage": "https://github.com/Smi0001/vdoPortal#readme"
+}

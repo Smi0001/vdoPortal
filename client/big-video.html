@@ -1,0 +1,29 @@
+<div  class="big-preview" ng-cloak>
+		<span class="vdo-det txt-trim">Current video details : 
+			<span class="vdo-title cur-d" ng-attr-title="{{bigVdo.name}}" ng-bind-html="bigVdo.name"></span>
+		</span>
+		<span onclick="gotoIndexPage();" class="preview-cls-btn"></span>
+		<div class="big-vdo j-vdo-preview">
+			<video class="big-video" id="{{bigVdo._id}}" controls autoplay onplay="stopOtherVdos(this);"
+			  ng-attr-src="{{bigVdo.url | trustUrl}}">
+			  Your browser does not support HTML5 video.
+			</video>
+			<div class="big-rating" rating="{{bigVdo.ratings}}">
+				<span class="rating j-rating">
+	                <input id="rating5" type="radio" name="rating" value="5" ng-click="rateVdo(5, bigVdo._id);">
+	                <label for="rating5">5</label>
+	                <input id="rating4" type="radio" name="rating" value="4" ng-click="rateVdo(4, bigVdo._id);">
+	                <label for="rating4">4</label>
+	                <input id="rating3" type="radio" name="rating" value="3" ng-click="rateVdo(3, bigVdo._id);">
+	                <label for="rating3">3</label>
+	                <input id="rating2" type="radio" name="rating" value="2" ng-click="rateVdo(2, bigVdo._id);">
+	                <label for="rating2">2</label>
+	                <input id="rating1" type="radio" name="rating" value="1" ng-click="rateVdo(1, bigVdo._id);">
+	                <label for="rating1">1</label>
+	            </span>
+            </div>
+            <div class="txt-trim vdo-title" ng-attr-title="{{bigVdo.name}}" ng-bind-html="bigVdo.name"></div>
+			<div class="vdo-desc" ng-bind-html="bigVdo.description"></div>
+		</div>
+	</div>
+</div>

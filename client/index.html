@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Portal</title>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+</head>
+<body ng-app="videoPortalApp">
+	<div ng-controller="videoPortalController" id="j-videoPortalController" class="controllerDiv">
+		<header>
+			<div class="logo">
+				Video Portal
+			</div>			
+			<div class="menus txt-center">
+				<input type="search" name="Search" placeholder="Search videos" class="search-vdos input" ng-focus="activateSearch($event);" ng-blur="blurSearch($event);">
+				<span class="search-btn cur-p"><i class="fa fa-search"></i></span>
+			<!-- <ul class="disp-flex marg-0" style="list-style: none;">
+				<li class="width-3">Menu</li>
+				<li class="width-3">Menu</li>
+				<li class="width-3">Menu</li>
+				<li class="width-3">Menu</li>
+				<li class="width-3">Menu</li>
+			</ul> -->
+			</div>			
+			<div class="disp-flex logger">
+				<div class="name cur-p">Hi, <span ng-bind-html="userName"></span></div>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<div class="cur-p" ng-click="logOut();">Logout</div>
+			</div>
+		
+			</header>
+		<div class="notifications"></div>
+		<div id="j-videoListDiv"></div>
+
+		<div ng-hide="$root.isAuthenticated" id="j-overlay" class="overlay-wrapper"></div>
+		<div ng-hide="$root.isAuthenticated" class="width-12 login-modal">
+			<form id="j-loginDiv" class="login-form width-4 small-10 medium-6">
+				<div class="row width-12 pad-10 marg-10">
+					<div class="width-6">
+						<input type="username" name="email" required="required" placeholder="Enter Username"
+						onkeyup="loginOnEnter(event);" class="input">	
+					</div>
+					<div class="width-6">
+						<input type="password" name="email" required="required" placeholder="Enter Password"
+						onkeyup="loginOnEnter(event);" class="input">	
+					</div>
+				</div>
+				<div class="row width-12 pad-10">
+					<div class="j-login-btn-div login-btn-div">
+						<button type="button" class="button primary" ng-click="tryLogin()">LOGIN</button>
+					</div>
+					<div class="signup">
+						<input type="checkbox" name="signup" class="" disabled="disabled"> Create New	
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="static/js/angular.min.js"></script>
+	<script type="text/javascript" src="static/js/angular-md5.min.js"></script>
+	<script type="text/javascript" src="static/js/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="static/js/ng-infinite-scroll.min.js"></script>
+	<script type="text/javascript" src="static/js/custom_script.js"></script>
+</html>

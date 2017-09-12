@@ -1,0 +1,78 @@
+<div>
+	<div infinite-scroll="loadNextVdoListPage()" infinite-scroll-immediate-check='false' infinite-scroll-disabled="vdoListLoadBusy" style=" overflow-y: auto;">
+		<div ng-if="(vdoArr.length > 0)" class="width-12 j-vdo-rows vdo-rows" ng-repeat="n in vdoArr" ng-switch on="$index % 3">
+
+
+				<div class="thumbnail j-thumbnail" ng-switch-when="0" index="{{$index}}" ng-if="vdoArr[$index]" vdourl="{{vdoArr[$index].url}}" vdoid="{{vdoArr[$index]._id}}" vdoname="{{vdoArr[$index].name}}" vdodesc="{{vdoArr[$index].description}}" vdoratings="{{vdoArr[$index].ratings}}">
+					<div class="vdo-preview j-vdo-preview">
+						<video width="220" id="{{vdoArr[$index]._id}}" onplay="stopOtherVdos(this);" controls 
+						ng-attr-src="{{vdoArr[$index].url | trustUrl}}" >
+						  Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<div class="vdo-title j-vdo-title txt-trim" ng-click="vdoTitleClicks($event);" ng-attr-title="{{vdoArr[$index].name}}" ng-bind-html="vdoArr[$index].name"></div>
+					<div class="ratings ratings-{{vdoArr[$index].ratings | avg}}" rating="{{vdoArr[$index].ratings | avg}}">Ratings: </div>
+					<div class="vdo-desc txt-trim" ng-bind-html="vdoArr[$index].description"></div>
+				</div>
+
+
+				<div class="thumbnail j-thumbnail" ng-switch-when="0" index="{{$index}}" ng-if="vdoArr[$index + 1]"  vdourl="{{vdoArr[$index + 1].url}}" vdoid="{{vdoArr[$index + 1]._id}}" vdoname="{{vdoArr[$index + 1].name}}" vdodesc="{{vdoArr[$index + 1].description}}" vdoratings="{{vdoArr[$index + 1].ratings}}">
+					<div class="vdo-preview j-vdo-preview">
+						<video width="220" id="{{vdoArr[$index + 1]._id}}" onplay="stopOtherVdos(this);" controls 
+						ng-attr-src="{{vdoArr[$index + 1].url | trustUrl}}" >
+						  Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<div class="vdo-title j-vdo-title txt-trim" ng-click="vdoTitleClicks($event);" ng-attr-title="{{vdoArr[$index + 1].name}}" ng-bind-html="vdoArr[$index + 1].name"></div>
+					<div class="ratings ratings-{{vdoArr[$index + 1].ratings | avg}}" rating="{{vdoArr[$index + 1].ratings | avg}}" >Ratings: </div>
+					<div class="vdo-desc txt-trim" ng-bind-html="vdoArr[$index + 1].description"></div>
+				</div>
+
+
+				<div class="thumbnail j-thumbnail" ng-switch-when="0" index="{{$index}}" ng-if="vdoArr[$index + 2]" vdourl="{{vdoArr[$index + 2].url}}" vdoid="{{vdoArr[$index + 2]._id}}" vdoname="{{vdoArr[$index + 2].name}}" vdodesc="{{vdoArr[$index + 2].description}}" vdoratings="{{vdoArr[$index + 2].ratings}}">
+					<div class="vdo-preview j-vdo-preview">
+						<video width="220" id="{{vdoArr[$index + 2]._id}}" onplay="stopOtherVdos(this);" controls 
+						 ng-attr-src="{{vdoArr[$index + 2].url | trustUrl}}" >
+						  Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<div class="vdo-title j-vdo-title txt-trim" ng-click="vdoTitleClicks($event);" ng-attr-title="{{vdoArr[$index + 2].name}}" ng-bind-html="vdoArr[$index + 2].name"></div>
+					<div class="ratings ratings-{{vdoArr[$index + 2].ratings | avg}}" rating="{{vdoArr[$index + 2].ratings | avg}}">Ratings: </div>
+					<div class="vdo-desc txt-trim" ng-bind-html="vdoArr[$index + 2].description"></div>
+				</div>
+
+<!-- 
+				<div class="thumbnail j-thumbnail" ng-switch-when="0" index="{{$index}}" ng-if="vdoArr[$index + 3]" vdourl="{{vdoArr[$index + 3].url}}" vdoid="{{vdoArr[$index + 3]._id}}" vdoname="{{vdoArr[$index + 3].name}}" vdodesc="{{vdoArr[$index + 3].description}}" vdoratings="{{vdoArr[$index + 3].ratings}}">
+					<div class="vdo-preview j-vdo-preview">
+						<video width="220" id="{{vdoArr[$index + 3]._id}}" onplay="stopOtherVdos(this);" controls 
+						 ng-attr-src="{{vdoArr[$index + 3].url | trustUrl}}" >
+						  Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<div class="vdo-title j-vdo-title txt-trim" ng-click="vdoTitleClicks($event);" ng-attr-title="{{vdoArr[$index + 3].name}}" ng-bind-html="vdoArr[$index + 3].name"></div>
+					<div class="ratings" rating="{{vdoArr[$index + 3].ratings | avg}}">Ratings: </div>
+					<div class="vdo-desc txt-trim" ng-bind-html="vdoArr[$index + 3].description"></div>
+				</div>
+
+
+				<div class="thumbnail j-thumbnail" ng-switch-when="0" index="{{$index}}" ng-if="vdoArr[$index + 4]" vdourl="{{vdoArr[$index + 4].url}}" vdoid="{{vdoArr[$index + 4]._id}}" vdoname="{{vdoArr[$index + 4].name}}" vdodesc="{{vdoArr[$index + 4].description}}"  vdoratings="{{vdoArr[$index + 4].ratings}}">
+					<div class="vdo-preview j-vdo-preview">
+						<video width="220" id="{{vdoArr[$index + 4]._id}}" onplay="stopOtherVdos(this);" controls 
+						ng-attr-src="{{vdoArr[$index + 4].url | trustUrl}}" >
+						  Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<div class="vdo-title j-vdo-title txt-trim" ng-click="vdoTitleClicks($event);" ng-attr-title="{{vdoArr[$index + 4].name}}" ng-bind-html="vdoArr[$index + 4].name"></div>
+					<div class="ratings" rating="{{vdoArr[$index + 4].ratings | avg}}">Ratings: </div>
+					<div class="vdo-desc txt-trim" ng-bind-html="vdoArr[$index + 4].description"></div>
+				</div>
+ -->
+
+		</div>
+	</div>
+	<div class="width-12 txt-center marg-15 j-vdo-loader ht-20">
+			<img  alt="Loading..." ng-attr-src="static/img/loading.gif" class="displaynone" />
+			<i class="fa fa-spinner fa-spin"></i>
+		</div>
+	<!-- <div class="width-12  txt-center txt-undrln hide cur-p">Load More</div> -->
+</div>
