@@ -1,4 +1,4 @@
-var domain = 'http://localhost';
+var domain = 'https://localhost';
 var port = '5000';
 var mainUrl = domain + ':' + port;
 
